@@ -1,0 +1,21 @@
+{
+  "expo": {
+    "name": "Trainr",
+    "slug": "trainr",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "platforms": ["ios"],
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#F9FAFB"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.trainr.app"
+    }
+  }
+}
