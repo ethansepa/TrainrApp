@@ -1,10 +1,17 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import HomeScreen from '../screens/HomeScreen';
+import ClientHomeScreen from '../screens/ClientHomeScreen';
+import WorkoutDetailsScreen from '../screens/WorkoutDetailsScreen';
 
 export type RootStackParamList = {
-  Home: undefined;
+  ClientHome: undefined;
+  WorkoutDetails: {
+    workoutName: string;
+    sets: number;
+    reps: number;
+    unit: string;
+  };
 };
 
 const Stack = createStackNavigator<RootStackParamList>();
@@ -13,7 +20,7 @@ export default function AppNavigator() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Home"
+        initialRouteName="ClientHome"
         screenOptions={{
           headerStyle: {
             backgroundColor: '#2563EB',
@@ -25,10 +32,17 @@ export default function AppNavigator() {
         }}
       >
         <Stack.Screen 
-          name="Home" 
-          component={HomeScreen}
+          name="ClientHome" 
+          component={ClientHomeScreen}
           options={{
             title: 'Trainr',
+          }}
+        />
+        <Stack.Screen 
+          name="WorkoutDetails" 
+          component={WorkoutDetailsScreen}
+          options={{
+            title: 'Workout Details',
           }}
         />
       </Stack.Navigator>
